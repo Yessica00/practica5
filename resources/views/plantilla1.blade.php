@@ -12,7 +12,7 @@
         <div class="row">
           <div class="col">
             
-            @include("menu2")
+            @include("menu")
           </div>
           <div class="row">
             <div class="col">

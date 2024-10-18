@@ -72,14 +72,14 @@
               </a>
               <ul class="dropdown-menu catalogos">
                 <li><a class="dropdown-item" href="{{route('periodos')}}">Periodos</a></li>
-                <li><a class="dropdown-item" href="{{route('plazas')}}">Plazas</a></li>
+                <li><a class="dropdown-item" href="{{route('plazas.index')}}">Plazas</a></li>
                 <li><a class="dropdown-item" href="{{route('puestos')}}">Puestos</a></li>
                 <li><a class="dropdown-item" href="{{route('personal')}}">Personal</a></li>
                 <li><a class="dropdown-item" href="{{route('deptos')}}">Departamentos</a></li>
                 <li><a class="dropdown-item" href="{{route('carreras')}}">Carreras</a></li>
                 <li><a class="dropdown-item" href="{{route('reticulas')}}">Retículas</a></li>
                 <li><a class="dropdown-item" href="{{route('materias')}}">Materias</a></li>
-                <li><a class="dropdown-item" href="{{route('alumno')}}">Alumnos</a></li>
+                <li><a class="dropdown-item" href="{{route('alumnos.index')}}">Alumnos</a></li>
               </ul>
             </li>
              <li class="nav-item dropdown">
@@ -88,7 +88,7 @@
                 </a>
                 <ul class="dropdown-menu horario">
                   <li><a class="dropdown-item" href="{{route('docentes')}}">Docentes</a></li>
-                  <li><a class="dropdown-item" href="{{route('alumno')}}">Alumno</a></li>
+                  <li><a class="dropdown-item" href="{{route('alumnos.index')}}">Alumno</a></li>
                 
                 </ul> 
             
@@ -140,5 +140,6 @@
           </ul>
         </div>
       </div>
+      
     </nav>
   
