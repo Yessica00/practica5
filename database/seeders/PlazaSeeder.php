@@ -12,6 +12,6 @@ class PlazaSeeder extends Seeder
      */
     public function run(): void
     {
-        Plaza::factory(30)->create(); 
+        //
     }
 }

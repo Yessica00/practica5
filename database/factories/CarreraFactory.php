@@ -19,7 +19,6 @@ class CarreraFactory extends Factory
     {
         $titulo=fake()->unique()->jobTitle();
         return [
-            "idcarrera"=>fake()->bothify("???####"),
             "nombrecarrera"=>$titulo,
             "nombremediano"=>fake()->unique()->lexify(str_repeat("?",15)),
             "nombrecorto"=>substr($titulo,0,5),
