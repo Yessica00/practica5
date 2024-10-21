@@ -82,14 +82,14 @@
               Catálogos
             </a>
             <ul class="dropdown-menu catalogos">
-              <li><a class="dropdown-item" href="{{route('periodos')}}">Periodos</a></li>
+              <li><a class="dropdown-item" href="{{route('Periodos.index')}}">Periodos</a></li>
               <li><a class="dropdown-item" href="{{route('plazas.index')}}">Plazas</a></li>
               <li><a class="dropdown-item" href="{{route('Puestos.index')}}">Puestos</a></li>
               <li><a class="dropdown-item" href="{{route('personal')}}">Personal</a></li>
-              <li><a class="dropdown-item" href="{{route('deptos')}}">Departamentos</a></li>
-              <li><a class="dropdown-item" href="{{route('carreras')}}">Carreras</a></li>
-              <li><a class="dropdown-item" href="{{route('reticulas')}}">Retículas</a></li>
-              <li><a class="dropdown-item" href="{{route('materias')}}">Materias</a></li>
+              <li><a class="dropdown-item" href="{{route('Deptos.index')}}">Departamentos</a></li>
+              <li><a class="dropdown-item" href="{{route('Carreras.index')}}">Carreras</a></li>
+              <li><a class="dropdown-item" href="{{route('Reticulas.index')}}">Retículas</a></li>
+              <li><a class="dropdown-item" href="{{route('Materias.index')}}">Materias</a></li>
               <li><a class="dropdown-item" href="{{route('alumnos.index')}}">Alumnos</a></li>
             </ul>
           </li>

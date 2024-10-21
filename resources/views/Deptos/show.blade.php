@@ -1,8 +1,10 @@
-@extends('plantilla2')
-@section('contenido1')
-@include('Deptos/tablahtml')
-@endsection
+@include('menu2')
 
+@include('Deptos/tablahtml')
+@section('contenido1')
+
+
+@endsection
 
 {{-- CONTENIDO2 --}}
 @section('contenido2')
@@ -40,7 +42,7 @@
   </div>
 
     <button type="submit" class="btn btn-danger">Confirma la Eliminacion</button>
-    <a href="{{route('Puestos.index')}}" class="btn btn-primary">Regresar</a>
+    <a href="{{route('Deptos.index')}}" class="btn btn-primary">Regresar</a>
     
   </form>
 

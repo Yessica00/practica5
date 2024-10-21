@@ -8,9 +8,10 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Nombre Del Departamento</th>
+                        <th scope="col">Nombre De la Carrera</th>
                         <th>Nombre Mediano</th>
                         <th>Nombre Corto</th>
+                        <th>Departamento</th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -19,7 +20,7 @@
                     name=""
                     id=""
                     class="btn btn-primary"
-                    href="{{route('Deptos.create')}}"
+                    href="{{route('Carreras.create')}}"
                     role="button"
                     >+</a
                 >
@@ -28,21 +29,22 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($deptos as $depto)
+            @foreach ($carreras as $carrera)
         
     
             
             <tr class="">
             
-                <td scope="row"> {{ $depto->id }}  </td>
-                <td>{{ $depto->nombredepto }}  </td>
-                <td>{{ $depto->nombremediano}}  </td>
-                <td>{{ $depto->nombrecorto}}  </td>
+                <td scope="row"> {{ $carrera->id }}  </td>
+                <td>{{ $carrera->nombrecarrera }}  </td>
+                <td>{{ $carrera->nombremediano}}  </td>
+                <td>{{ $carrera->nombrecorto}}  </td>
+                <td>{{ $carrera->depto->nombredepto }}  </td>
                <td> <a
                 name=""
                 id=""
                 class="btn btn-primary"
-                href="{{route('Deptos.edit',$depto->id)}}"
+                href="{{route('Carreras.edit',$carrera->id)}}"
                 role="button"
                 >Editar</a
             ></td>
@@ -51,7 +53,7 @@
                 name=""
                 id=""
                 class="btn btn-primary"
-                href="{{route('Deptos.show',$depto->id)}}"
+                href="{{route('Carreras.show',$carrera->id)}}"
                 role="button"
                 >Eliminar</a
             >  
@@ -61,7 +63,7 @@
                     name=""
                     id=""
                     class="btn btn-primary"
-                    href="{{route('Deptos.show',$depto->id)}}"
+                    href="{{route('Carreras.show',$carrera->id)}}"
                     role="button"
                     >Ver</a
                 >
@@ -73,6 +75,6 @@
         </tbody>
     </table>
 
-    {{$deptos->links()}}
+    {{$carreras->links()}}
 
 </div>

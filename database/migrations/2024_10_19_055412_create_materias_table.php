@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('carreras', function (Blueprint $table) {
+        Schema::create('materias', function (Blueprint $table) {
             $table->id('id');
-            $table->String('nombrecarrera',200)->unique();
+            $table->String('nombremateria',200)->unique();
+            $table->String('nivel',5)->unique();
             $table->String('nombremediano',50)->unique();
-            $table->String('nombrecorto',5)->unique();
-            $table->foreignId("depto_id")->constrained();
+            $table->String('nombrecorto',50)->unique();
+            $table->String('modalidad',50)->unique();
+            $table->foreignId("reticula_id")->constrained();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('carreras');
+        Schema::dropIfExists('materias');
     }
 };

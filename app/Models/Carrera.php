@@ -10,12 +10,17 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Carrera extends Model
 {
    use HasFactory;
-    
+   protected $fillable = [
+      'nombrecarrera',
+      'nombremediano',
+      'nombrecorto',
+      'depto_id',
+  ];
    // public function alumnos(): HasMany{
    //     return $this->hasMany(Alumno::class);
    // }
 
-    //public function depto():BelongsTo{
-   //     return $this->belongsTo(Depto::class);
-   // }
+   public function depto():BelongsTo{
+      return $this->belongsTo(Depto::class);
+    }
 }

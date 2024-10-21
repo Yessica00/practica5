@@ -38,6 +38,15 @@
           <option value="f" {{ old('sexo', $alumno->sexo) == 'f' ? 'selected' : '' }}>Femenino</option>
         </select>
         @error("sexo")
+        <label for="carrera_id">Seleccionar Carrera</label>
+<select name="carrera_id" id="carrera_id" class="form-control" {{ $des }}>
+    <option value="">-- Seleccione una Carrera --</option>
+    @foreach ($carreras as $carrera)
+        <option value="{{ $carrera->id }}" {{ $carrera->id == $alumno->carrera_id ? 'selected' : '' }}>
+            {{ $carrera->nombrecarrera }}
+        </option>
+    @endforeach
+</select>
     <div class="form-group row">
       <div class="col-sm-10">
         <button type="submit" class="btn btn-primary">Actualizar</button>

@@ -1,8 +1,12 @@
-@extends('plantilla2')
-@section('contenido1')
+@include('menu2')
+
 @include('Deptos/tablahtml')
+@section('contenido1')
+
+
 @endsection
 
+@section('contenido2')
 @foreach ( $errors->all() as $error )
   <li>
     {{$error}}

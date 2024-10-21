@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumno;
+use App\Models\Carrera;
 use Illuminate\Http\Request;
 
 class AlumnoController extends Controller
@@ -14,7 +15,8 @@ class AlumnoController extends Controller
             'nombre'=>['required','min:3'],
             'apellidop'=>'required',
             'apellidom'=>'required',
-            'sexo'=>'required'
+            'sexo'=>'required',
+            'carrera_id' => ['required', 'exists:carreras,id']
         ];
     }
     /**
@@ -22,20 +24,20 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        $alumnos= Alumno::paginate(15); 
+        $alumnos= Alumno::with('carrera')->paginate(5);
         //return view("alumnos/index" , ['alumnos' =>$alumnos]);
         return view("alumnos2/index" , compact('alumnos'));
     }
 
     public function create()
     {
-        
+        $carreras = Carrera::all();
         $alumnos= Alumno::paginate(15); 
         $alumno= new Alumno;
         $accion='C';
         $txtbtn='Guardar';
         $des="";
-        return view("alumnos2/form", compact('alumnos', 'alumno','accion',
+        return view("alumnos2/form", compact('alumnos', 'carreras','alumno','accion',
         'txtbtn','des'));
     }
 
@@ -44,10 +46,18 @@ class AlumnoController extends Controller
      */
     public function store(Request $request)
     {
-        //return$request;
-            $val=$request->validate($this->val);
+       // Validar los datos
+       $val = $request->validate($this->val);
 
-        Alumno::create($val);
+       // Crear un nuevo alumno
+       Alumno::create([
+           'noctrl' => $request->noctrl,
+           'nombre' => $request->nombre,
+           'apellidop' => $request->apellidop,
+           'apellidom' => $request->apellidom,
+           'sexo' => $request->sexo,
+           'carrera_id' => $request->carrera_id, // Asigna la carrera seleccionada
+       ]);
         return redirect()->route("alumnos.index")->with('mensaje',"Insertado de manera segura");
     }
 
@@ -70,13 +80,12 @@ class AlumnoController extends Controller
      */
     public function edit(Alumno $alumno)
     {
-        
+        $carreras = Carrera::all(); 
         $alumnos= Alumno::paginate(15); 
        $accion='E';
        $txtbtn='Actualizar';
        $des="";
-        return view("alumnos2/form" , compact('alumnos', 'alumno',
-        'accion','txtbtn','des'));
+        return view("alumnos2/form" , compact('alumnos', 'alumno','carreras', 'accion','txtbtn','des'));
     }
 
     /**

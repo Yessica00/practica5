@@ -11,6 +11,8 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido Paterno</th>
                 <th scope="col">Apellido Materno</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Carrera</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -38,6 +40,7 @@
                 <td>{{$alumno->apellidop}}</td>
                 <td>{{$alumno->apellidom}}</td>
                 <td>{{$alumno->sexo}}</td>
+                <td>{{ $alumno->carrera->nombrecarrera }}</td>
                 
                <td> <a
                 name=""

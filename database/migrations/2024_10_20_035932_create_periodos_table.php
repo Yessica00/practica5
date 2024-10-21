@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('carreras', function (Blueprint $table) {
+        Schema::create('periodos', function (Blueprint $table) {
             $table->id('id');
-            $table->String('nombrecarrera',200)->unique();
-            $table->String('nombremediano',50)->unique();
-            $table->String('nombrecorto',5)->unique();
-            $table->foreignId("depto_id")->constrained();
+            $table->String('periodo',200)->unique();
+            $table->String('descripcion',50)->unique();
+            $table->String('fechaini',50)->unique();
+            $table->String('fechafin',50)->unique();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('carreras');
+        Schema::dropIfExists('periodos');
     }
 };

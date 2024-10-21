@@ -11,10 +11,10 @@ class Alumno extends Model
 {
     use HasFactory;
 
-    protected $fillable =['noctrl','nombre','apellidop','apellidom','sexo'];
+    protected $fillable =['noctrl','nombre','apellidop','apellidom','sexo','carrera_id',];
 
-   // public function Carrera(): BelongsTo{
-     //   return $this->belongsTo(Carrera::class);
-   // }
+    public function Carrera(): BelongsTo{
+        return $this->belongsTo(Carrera::class);
+    }
 
 }

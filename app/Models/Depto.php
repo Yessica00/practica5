@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Depto extends Model
 {
     use HasFactory;
-
+    protected $fillable =['nombredepto','nombremediano','nombrecorto'];
     public function Carreras(): HasMany{
         return $this->hasMany(Carrera::class);
     } 
