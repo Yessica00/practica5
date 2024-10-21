@@ -66,12 +66,13 @@ class AlumnoController extends Controller
      */
     public function show(Alumno $alumno)
     {
+        $carreras=Carrera::all();
         $alumnos= Alumno::paginate(15); 
         $accion="D";
         $txtbtn='Confirmar Eliminacion';
         $des='disabled';
 
-        return view("alumnos2.form", compact('alumnos','alumno','accion',
+        return view("alumnos2.form", compact('carreras','alumnos','alumno','accion',
         'txtbtn','des'));
     }
 

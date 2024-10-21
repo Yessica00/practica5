@@ -43,14 +43,14 @@
     </div>
   </div>
   <label for="depto_id">Departamento:</label>
-  <select name="depto_id" id="depto_id" disabled>
-      @foreach ($deptos as $depto)
-          <option value="{{ $depto->id }}" {{ $depto->id == $carrera->depto_id ? 'selected' : '' }}>
-              {{ $depto->nombredepto }}
-          </option>
-      @endforeach
-  </select>
-
+  <select name="depto_id" id="depto_id" class="form-control" {{ $des }}>
+    <option value="">-- Seleccione un Departamento --</option>
+    @foreach ($deptos as $depto)
+        <option value="{{ $depto->id }}" {{ $depto->id == $carrera->depto_id ? 'selected' : '' }}>
+            {{ $depto->nombredepto }}
+        </option>
+    @endforeach
+</select>
     <button type="submit" class="btn btn-danger">Confirma la Eliminacion</button>
     <a href="{{route('Carrera.index')}}" class="btn btn-primary">Regresar</a>
     

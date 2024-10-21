@@ -59,13 +59,15 @@
         @enderror
       </div>
     </div>
-    <label for="depto_id">Seleccionar Departamento</label>
-    <select name="depto_id" id="depto_id" required>
-        <option value="">-- Seleccione un Departamento --</option>
-        @foreach ($deptos as $depto)
-            <option value="{{ $depto->id }}">{{ $depto->nombredepto }}</option>
-        @endforeach
-    </select>
+    <select name="depto_id" id="depto_id" class="form-control" {{ $des }}>
+      <option value="">-- Seleccione una Carrera --</option>
+      @foreach ($deptos as $depto)
+          <option value="{{ $depto->id }}" {{ $depto->id == $carrera->depto_id ? 'selected' : '' }}>
+              {{ $depto->nombredepto }}
+          </option>
+      @endforeach
+  </select>
+  
     <button type="submit" class="btn btn-primary">{{$txtbtn}}</button>
     
   </form>
